@@ -10,7 +10,7 @@ source_path = os.path.join("Resources", "budget_data.csv")
 # Create varaible holding path to create results text document
 output_file = os.path.join("budget_data_analysis.txt")
 
-# open source file using the with statement to handle cleanup
+# open source file using the "with" statement to handle cleanup
 with open (source_path, "r") as csvfile:
 	# Create csv.reader object and assign it a variable.
 	csv_reader = csv.reader(csvfile, delimiter = ',')
@@ -24,8 +24,9 @@ with open (source_path, "r") as csvfile:
 	# and associate the list with a variable.
 	diff = [list(row_data[i + 1].values())[0] - list(row_data[i].values())[0] for i in range(0, len(row_data) - 1)]
 
-# Create desired results output text structure with the results 
+# Create desired output text structure with the results 
 # inserted into desired locations within the results text structure
+# Line 35 and 36 do the exact same thing. Just example of two ways to accomplish the same task.
 output = f'''Financial Analysis
 ----------------------------
 Total Months: {len(row_data)}
@@ -38,7 +39,7 @@ Greatest Decrease in Profits: {iter(row_data[diff.index(min(diff))+ 1].keys())._
 print(output)
 
 # Produce the output file and place in the appropriate directory
-# Use with statement to do cleanup after action completes
+# Use "with" statement to handle cleanup after action completes
 with open (output_file, "w") as handle:
 	handle.write(output)
 

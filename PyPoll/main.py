@@ -28,6 +28,11 @@ def vote_count(source, candidates, output):
 		for vote in votes:
 			candidate=vote[2]
 			# Implement try|except block to handle possible candidate error in source data
+			# candidates is an empty dictionary at this point {}
+			# if key in dictionary: 
+			#	dictionary[key]+=1
+			# else: (implicitly key is not in dictionary, aka first record)
+			# 	dictionary[key]=1
 			try:
 				# read each line of data and asign vote to appropriate candidate
 				candidates[candidate]+=1
