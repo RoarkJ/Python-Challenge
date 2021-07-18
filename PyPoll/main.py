@@ -40,7 +40,7 @@ def vote_count(source, candidates, output):
 			# else: (implicitly key is not in dictionary, aka first record)
 			# 	dictionary[key]=1
 			try:
-				# read each line of data and asign vote to appropriate candidate
+				# read each line of data and assign vote to appropriate candidate
 				candidates[candidate]+=1
 				# If there is a candidate mismatch hadle the error gracefully
 				# catch error and send message to 
