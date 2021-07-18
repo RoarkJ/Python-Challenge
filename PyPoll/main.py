@@ -14,7 +14,7 @@ source_path = os.path.join("Resources", "election_data.csv")
 output_file = os.path.join("election_results.txt")
 # Provide container structure containing candidate names and coresponding vote count
 # I could have started with an empty dictionary and added each candidate as I came across
-# them in the results but, in an election one typically will know all candiddates
+# them in the results but, in an election one typically will know all candidates
 # ahead of time.  Also, defining all candidates provides a way to make sure each vote 
 # is going to a valid candidate.
 candidates = {"Correy": 0, "Khan": 0, "Li": 0, "O'Tooley": 0}
