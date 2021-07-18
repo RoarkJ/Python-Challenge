@@ -7,11 +7,16 @@ import csv
 import sys
 from operator import itemgetter
 
-# Create variable holding path to source csv file
+# Create variable holding path to source csv file "Resources" is the folder
+# holding the "election_data.csv" file.  So, join these to create relative path.
 source_path = os.path.join("Resources", "election_data.csv")
 # Create varaible holding path to create results text document
 output_file = os.path.join("election_results.txt")
 # Provide container structure containing candidate names and coresponding vote count
+# I could have started with an empty dictionary and added each candidate as I came across
+# them in the results but, in an election one typically will know all candiddates
+# ahead of time.  Also, defining all candidates provides a way to make sure each vote 
+# is going to a valid candidate.
 candidates = {"Correy": 0, "Khan": 0, "Li": 0, "O'Tooley": 0}
 
 # Implement function with parameters to recieve needed arguments
@@ -24,7 +29,8 @@ def vote_count(source, candidates, output):
 		# Bypass the header data
 		next(votes)
 		
-		# create loop to go through each row of data
+		# create loop to go through each vote list containing 
+		# vote data for a single vote in the csv reader object "votes"
 		for vote in votes:
 			candidate=vote[2]
 			# Implement try|except block to handle possible candidate error in source data
