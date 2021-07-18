@@ -53,6 +53,8 @@ def vote_count(source, candidates, output):
 		# Sort the candidates based on votes received by each candidate
 		# Order greatest to least candidate vote count
 		# dict.items() returns a list of k, v, tuple pairs
+		# I can always use a lambda expression as the value of the key
+		# but using built-ins is faster processing.
 		res_ord = sorted(candidates.items(), key=itemgetter(1), reverse=True)
 		# Create a list to hold f-string elements that describe the results for each candidate
 		res_output=[]
