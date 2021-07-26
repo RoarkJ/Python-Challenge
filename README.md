@@ -1,4 +1,4 @@
-# Python Financial Records and Election Results Analysis
+# Python Financial Records and Election Results Analyses
 
 ## PyBank
 
